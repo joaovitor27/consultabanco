@@ -14,7 +14,7 @@ def home(request):
         messages.error(request, 'Digite um Numero!')
         context = {}
     else:    
-        bancos = req.get(f'http://localhost:8000/api/books/{search}')
+        bancos = req.get(f'https://api-consulta-banco.herokuapp.com/api/books/{search}')
         if bancos.status_code >= 200 and bancos.status_code <=299:
             bancos_data = bancos.json()
             print(bancos_data)
